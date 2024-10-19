@@ -259,7 +259,7 @@ void CHudCrosshair::Paint( void )
 	}
 
 	int iScreenDiv = 1600;
-	if ( IsGamepadUI() )
+	if ( IsSteamDeck() )
 		iScreenDiv = 1440;
 
 	float flPlayerScale;
