@@ -1334,16 +1334,6 @@ void CHLClient::HudUpdate( bool bActive )
 	CRTime::UpdateRealTime();
 #endif
 
-#ifdef GAMEPADUI
-	if (IsGamepadUI())
-	{
-		if (!enginevgui->IsGameUIVisible())
-		{
-			engine->ExecuteClientCmd("gamepadui_resetfade");
-		}
-	}
-#endif // GAMEPADUI
-
 	GetClientVoiceMgr()->Frame( frametime );
 
 	gHUD.UpdateHud( bActive );
@@ -1383,12 +1373,7 @@ void CHLClient::HudUpdate( bool bActive )
 void CHLClient::HudReset( void )
 {
 	gHUD.VidInit();
-#ifdef GAMEPADUI
-	if (IsGamepadUI())
-	{
-		engine->ExecuteClientCmd("gamepadui_resetfade");
-	}
-#endif // GAMEPADUI
+
 	PhysicsReset();
 }
 

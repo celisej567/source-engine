@@ -96,8 +96,6 @@ $Project
         $File "gamepadui_options.cpp"
         $File "gamepadui_scrollbar.cpp"
         $File "gamepadui_util.cpp"
-        $File "gamepadui_loadingscreen.cpp"
-        $File "gamepadui_loadingscreen.h"
     }
 
     $Folder "Link Libraries"
