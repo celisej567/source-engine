@@ -255,6 +255,12 @@ float CalculatePhysicsImpactDamage( int index, gamevcollisionevent_t *pEvent, co
 	if ( pEvent->pEntities[0] == pEvent->pEntities[1] )
 		return 0;
 
+	if (pEvent->pEntities[otherIndex]->GetCollisionGroup() == COLLISION_GROUP_VEHICLE)
+	{
+		//Our friend is 100% vehicle, reassigning to the damage type.
+		damageType = DMG_VEHICLE;
+	}
+
 	if ( pEvent->pObjects[otherIndex]->GetGameFlags() & FVPHYSICS_NO_NPC_IMPACT_DMG )
 	{
 		if( pEvent->pEntities[index]->IsNPC() || pEvent->pEntities[index]->IsPlayer() )
